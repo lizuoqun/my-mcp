@@ -15,7 +15,6 @@ mcp = MCPServer("NewsServer")
 load_dotenv()
 
 
-# @mcp.tool() 是 MCP 框架的装饰器，表明这是一个 MCP 工具。之后是对这个工具功能的描述
 @mcp.tool()
 async def search_google_news(keyword: str) -> str:
     """
@@ -73,7 +72,6 @@ async def search_google_news(keyword: str) -> str:
     )
 
 
-# @mcp.tool() 是 MCP 框架的装饰器，标记该函数为一个可调用的工具
 @mcp.tool()
 async def analyze_sentiment(text: str, filename: str) -> str:
     """

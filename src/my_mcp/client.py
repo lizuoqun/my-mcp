@@ -25,6 +25,7 @@ class MCPClient:
             raise ValueError("DEEPSEEK_API_KEY为空，在.env文件里面进行配置！")
 
         self.client = OpenAI(api_key=self.api_key, base_url=self.base_url)
+        self.model = os.getenv("MODEL", "deepseek-chat")
         self.session: Optional[ClientSession] = None
 
     async def connect_to_server(self, server_script_path: str):
@@ -68,7 +69,7 @@ class MCPClient:
                 "function": {
                     "name": tool.name,
                     "description": tool.description,
-                    "input_schema": tool.inputSchema
+                    "input_schema": tool.input_schema
                 }
             } for tool in response.tools
         ]

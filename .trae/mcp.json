@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "daily-news": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "D:/work/my-mcp",
+        "python",
+        "-m",
+        "my_mcp.api_call.server"
+      ]
+    }
+  }
+}
